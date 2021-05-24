@@ -1,0 +1,99 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %git}
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+
+
+<main>
+
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+      {% if event.cancel_event == True %}
+      <h1 class="fw-light">Event: {{event.Event_Title}}, has been canceled by the owner.</h1>
+      {% elif over == True %}
+      <h1 class="fw-light">Event: {{event.Event_Title}}, is over by now.</h1>
+      {% else %}
+      
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Maximum Participants</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{event.Max_NO_Participants}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Registered Participants</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{register_count}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Confirmed Participants</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{count}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+      <h1 class="fw-light">Event Details</h1>
+      <img src= "{{ event.Event_Banner.url}}" height=300 px>
+        <h1 class="fw-light">{{ event.Event_Title }}</h1>
+        <p class="lead text-muted">Description:{{event.description }}</p>
+        <p class="lead text-muted">Date:{{event.Event_Date }}, Time:{{event.Event_Time }}</p>
+        <p class="lead text-muted">Max N.O of Participants:{{event.Max_NO_Participants }}</p>
+        <p class="lead text-muted">Category:{{event.category }}</p>
+          <a href="{% url 'RegisterEvent' event.id %}" class="btn btn-primary my-2"> _RSVP_ </a>
+        
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+{% endblock %}

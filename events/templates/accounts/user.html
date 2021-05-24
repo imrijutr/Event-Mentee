@@ -1,0 +1,290 @@
+{%  extends 'accounts/main.html' %}
+{% block content %}
+{%  include 'accounts/status.html' %}
+
+
+
+
+
+<style>
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+</style>
+
+<br>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Home</a>
+			<hr>
+			<h3 style="text-align: center">{{ request.user.customer.name }}</h3>
+			<hr>
+			<img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" >
+		
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="card card-body">
+			
+			{% comment %} <form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form.as_p}}
+		
+			<input class="btn btn-primary" type="submit" name="Update Information">
+			</form> {% endcomment %}
+
+			<div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <a href="{% url  'account'  %}" class="btn btn-primary my-2">Edit Profile</a>
+		<a href="{% url 'Create_Event' customer.id %}" class="btn btn-primary my-2">Create Event</a>
+		<a href="{% url 'All_Upcoming_Event'  %}" class="btn btn-primary my-2">All Upcoming Event's</a>
+        </div>
+        </div>
+		<table >
+			{% comment %} <tr>
+			<h3>Your Detail's</h3>
+			</tr> {% endcomment %}
+			<tr>
+			<th>
+		    <p> BIO: {{request.user.customer.Bio}}</p>
+			</th>
+			</tr>
+			<tr>
+			<th>
+		    <p> Organization: {{request.user.customer.Organization}}</p>
+			</th>
+			</tr>
+			<tr>
+			<th>
+		    <p> E-mail: {{request.user.customer.email}}</p>
+			</th>
+			</tr>
+			<tr>
+			<th>
+		    <p> Phone: {{request.user.customer.phone}}</p>
+			</th>
+			</tr>
+			{% comment %} <tr>
+			<th>
+		    <p> Date Created: {{request.user.customer.date_created}}</p>
+			</th>
+			</tr> {% endcomment %}
+			</table>
+		
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+			<tr>
+			<h2 align=center>Upcoming Event's you created</h1>
+			<br>
+			</tr>
+				<tr>
+					<th>Event Title</th>
+					<th>Category</th>
+					<th>Date created</th>
+					<th>Max Participants</th>
+					<th>Registrants Count </th>
+					<th>Confirmed Participants </th>
+					<th>Edit Event</th>
+					<th>Cancel Event</th>
+				</tr>
+
+				{% for event in created_events %}
+				{% if event.Event_Title in list2 %}
+       
+                 {% else %}
+				
+
+				<tr>
+					<td><a href="{% url 'Event_details' event.id %}" >{{event.Event_Title}}</a></td>
+					<td>{{event.category}}</td>
+					<td>{{event.date_created}}</td>
+					<td>{{event.Max_NO_Participants}}</td>
+					<td>{{ event.count }}</td>
+					<td>{{event.count2}}</td>
+					<td><a href="{% url 'update_event' event.id %}" class="btn btn-sm btn-info">Edit Event</a></td>
+					<td><a href="{% url 'delete_event' event.id %}" class="btn btn-sm btn-danger">Cancel Event</a></td>
+				</tr>
+				{% endif %}
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+			<tr>
+			<h2 align=center>Past Event's you created</h1>
+			<br>
+			</tr>
+				<tr>
+					<th>Event Title</th>
+					<th>Category</th>
+					<th>Date created</th>
+					<th>Max Participants</th>
+					<th>Registrants Count </th>
+					<th>Confirmed Participants </th>
+					<th>Edit Event</th>
+					<th>Cancel Event</th>
+				</tr>
+
+				{% for event in created_events %}
+				{% if event.Event_Title in list2 %}
+				<tr>
+					<td><a href="{% url 'Event_details' event.id %}" >{{event.Event_Title}}</a></td>
+					<td>{{event.category}}</td>
+					<td>{{event.date_created}}</td>
+					<td>{{event.Max_NO_Participants}}</td>
+					<td>{{ event.count }}</td>
+					<td>{{event.count2}}</td>
+					<td><a href="{% url 'update_event' event.id %}" class="btn btn-sm btn-info">Edit Event</a></td>
+					<td><a href="{% url 'delete_event' event.id %}" class="btn btn-sm btn-danger">Cancel Event</a></td>
+				</tr>
+				{% endif %}
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+			<tr>
+			<h2 align=center>Upcoming Registered Event's</h1>
+			<br>
+			</tr>
+				<tr>
+					<th>Event Name</th>
+					<th>Category</th>
+					<th>Event Date</th>
+					<th>Edit Detail's</th>
+					<th>Seats Left</th>
+					<th>Confirm Participation</th>
+					 <th>Meet Link</th> 
+
+				</tr>
+
+				{% for event in registered_events %}
+				 {% if event.event_name.Event_Title in list %}
+       
+                 {% else %}
+				
+
+				<tr>
+					<td><a href="{% url 'Event_details' event.event_name.id %}">{{event.event_name.Event_Title}}</a></td>
+					<td>{{event.event_name.category}}</td>
+					<td>{{event.event_name.Event_Date}}</td>
+					<td><a href="{% url 'update_details' event.event_name.id %}" class="btn btn-secondary my-2">Edit Details</a></td>
+					<td>{{ event.count }}</td>
+					<td><a href="{% url 'confirm' event.id %}" class="btn btn-sm btn-info">Confirm Participation</a></td>
+					{% if event.status == 'NO' or event.status == none %}
+					<td><p>You must confirm <br> your Participation</P></td>
+					{% elif event.event_name.Meet_link == "none" %}
+					<td>Not Provided </td>
+					 {% else %}
+					 <td><a href="{{event.event_name.Meet_link}}" class="btn btn-primary my-2">Click here</a></td> 
+					 {% endif %}
+					 
+				</tr>
+				{% endif %}
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+			<tr>
+			<h2 align=center>Event's you Attended</h1>
+			<br>
+			</tr>
+				<tr>
+					<th>Event Name</th>
+					<th>Category</th>
+					<th>Date Registered</th>
+					<th>Event Date</th>
+				</tr>
+
+				{% for event in registered_events %}
+				
+				{% if event.event_name.Event_Title in list %}
+				{% if event.status == 'YES' or event.status == 'MAYBE' %}
+
+				<tr>
+					<td><a href="{% url 'Event_details' event.event_name.id %}">{{event.event_name.Event_Title}}</a></td>
+					<td>{{event.event_name.category}}</td>
+					<td>{{event.event_name.date_created}}</td>
+					 <td>{{event.event_name.Event_Date}}</td> 
+				</tr>
+				{% endif %}
+				{% endif %}
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+			<tr>
+			<h2 align=center>All Registered Event's</h1>
+			<br>
+			</tr>
+				<tr>
+					<th>Event Name</th>
+					<th>Category</th>
+					<th>Date Registered</th>
+					<th>Event Date </th>
+					<th>Event Participated</th>
+
+				</tr>
+
+				{% for event in registered_events %}
+				 
+       
+                 
+				
+
+				<tr>
+					<td><a href="{% url 'Event_details' event.event_name.id %}">{{event.event_name.Event_Title}}</a></td>
+					<td>{{event.event_name.category}}</td>
+					<td>{{event.event_name.date_created}}</td>
+					<td>{{event.event_name.Event_Date}}</td>
+					<td>{{event.status}}</td>
+					
+					 
+				</tr>
+				
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+<hr>
+{% endblock content %}

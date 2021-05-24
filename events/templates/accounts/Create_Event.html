@@ -1,0 +1,58 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+		<br>
+
+		<div class="row">
+			<div class="col-md">
+				<div class="col-md-9">
+		<div class="card card-body">
+			
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+
+				{{ form.management_form }}
+				{% for field in form %}
+					{{field.as_p}}
+					<hr>
+				{% endfor %}
+				{% comment %} <p>{{form.Event_Title.label}}
+				{{form.Event_Title}}</p>
+
+				<p>{{form.Event_Date_Time.label}}
+				{{form.Event_Date_Time}}</p>
+
+				<p>{{form.Event_Location.label}}
+				{{form.Event_Location}}</p>
+
+				<p>{{form.Max_NO_Participants.label}}
+				{{form.Max_NO_Participants}}</p>
+
+				<p>{{form.Event_Banner.label}}
+				{{form.Event_Banner}}</p>
+
+				<p>{{form.description.label}}
+				{{form.description}}</p>
+
+				<p>{{form.category.label}}
+				{{form.category}}</p>
+
+				<p>{{form.tags.label}}
+				{{form.tags}}</p>
+
+				<p>{{form.date_created.label}}
+				{{form.date_created}}</p> {% endcomment %}
+
+				
+				{{form.error}}
+		
+			<input class="btn btn-primary" type="submit" name="Update Information">
+			</form>
+		</div>
+	</div>
+			</div>
+			
+		</div>
+
+{% endblock content %}
