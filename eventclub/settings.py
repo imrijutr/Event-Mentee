@@ -26,9 +26,10 @@ SECRET_KEY = 'j#tj4#xa0b56l2g_n6f-4)okk(xgurf3!likvwsi)i6d@^6jz7'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '0.0.0.0'
+    '*',
+    '0.0.0.0',
     'eventmentee.herokuapp.com',
-    '127.0.0.1'
+    '127.0.0.1',
 ]
 
 # Application definition
