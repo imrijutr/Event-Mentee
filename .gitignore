@@ -1,6 +1,6 @@
-./bin
+bin
 .vscode
 *.cfg
-./lib
-./lib64
-./include
+lib
+lib64
+include
