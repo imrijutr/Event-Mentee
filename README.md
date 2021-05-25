@@ -2,8 +2,8 @@
 # Event Mentee
 Long Description about project. This project do that. This project is awesome...
 ## Team members
-1. Ajin K J [https://github.com/Ajinkj]
-2. Leen David P B [https://github.com/LeenDavidPB]
+1. [Ajin K J](https://github.com/Ajinkj)
+2. [Leen David P B](https://github.com/LeenDavidPB)
 ## Team Id
 Team id here
 ## Link to product walkthrough
