@@ -14,8 +14,10 @@ BFH/recmliFUaORA6shU5/2021
 ## Link to product walkthrough
 [Video Explanation in malayalam](https://www.loom.com/share/0b74dd06ea1648cbb776a0dc776cf8fe)
 ## How it Works ?
->Its 
-2. Embed video of project demo
+
+Its working on Python-Django.
+
+2.[https://www.loom.com/share/0b74dd06ea1648cbb776a0dc776cf8fe]
 ## Libraries used
 - asgiref==3.3.4
 - dj-database-url==0.5.0
