@@ -23,11 +23,10 @@ Team id here
 - Pillow==8.2.0
 - psycopg2==2.8.6
 - psycopg2-binary==2.8.6
-- python-decouple==3.4
 - pytz==2021.1
 - sqlparse==0.4.1
-- whitenoise==5.2.0
 ## How to configure
-Instructions for setting up project
+#### 1. Clone to https://github.com/imrijutr/Event-Mentee.git
+
 ## How to Run
 Instructions for running
