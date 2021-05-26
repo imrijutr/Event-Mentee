@@ -4,6 +4,7 @@ The Event Mentee is an event management platform for creating the events for org
 Event Mentee has features like 
 - Upcoming events
 - RSVP in built
+
 We are adding more to it!
 ## Team members
 1. [Ajin K J](https://github.com/Ajinkj)
