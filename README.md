@@ -27,6 +27,7 @@ Team id here
 - sqlparse==0.4.1
 ## How to configure
 #### 1. Clone to https://github.com/imrijutr/Event-Mentee.git
+`$git clone https://github.com/imrijutr/Event-Mentee.git`
 
 ## How to Run
 Instructions for running
