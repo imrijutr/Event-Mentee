@@ -23,7 +23,7 @@ BFH/recmliFUaORA6shU5/2021
 
 We used Django to build our webapp. We created the models to save datas of user, events, registered events, etc. Then we setup the url's and views associated with it. Once the user click on our webapp link they are takin to the Home, there they can find option to create event, profile, signup, login, upcoming events, etc. Anew user can signup and existing user can login. Then they can create event, register for the available events, update there profile picture and many more. A ton of faetures is added to our webapp.
 
-2.[https://www.loom.com/share/0b74dd06ea1648cbb776a0dc776cf8fe]
+You can experience our webapp here: http://104.43.208.21/ or https://eventmentee.herokuapp.com/
 ## Libraries used
 - asgiref==3.3.4
 - dj-database-url==0.5.0
