@@ -9,7 +9,7 @@ Team id here
 ## Link to product walkthrough
 [Video Explanation in malayalam](https://www.loom.com/share/0b74dd06ea1648cbb776a0dc776cf8fe)
 ## How it Works ?
-1. Explaining the working of project
+>Its 
 2. Embed video of project demo
 ## Libraries used
 - asgiref==3.3.4
@@ -34,10 +34,7 @@ Team id here
 ` source <path to venv>/bin/activate`
 #### 3. Install all the dependencies
 `pip install requirements.txt`
-#### 5. Run the server 
-`python manage.py runserver'
-
-
 
 ## How to Run
-Instructions for running
+####  Run the server using the following command
+`python manage.py runserver`
