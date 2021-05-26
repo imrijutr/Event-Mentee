@@ -1,6 +1,10 @@
 ![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
 # Event Mentee
-Long Description about project. This project do that. This project is awesome...
+The Event Mentee is an event management platform for creating the events for organizers and registering the events for who wish to participate in it.
+Event Mentee has features like 
+- Upcoming events
+- RSVP in built
+We are adding more to it!
 ## Team members
 1. [Ajin K J](https://github.com/Ajinkj)
 2. [Leen David P B](https://github.com/LeenDavidPB)
