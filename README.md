@@ -7,7 +7,7 @@ Long Description about project. This project do that. This project is awesome...
 ## Team Id
 Team id here
 ## Link to product walkthrough
-[link to video]
+[Video Explanation in malayalam](https://www.loom.com/share/0b74dd06ea1648cbb776a0dc776cf8fe)
 ## How it Works ?
 1. Explaining the working of project
 2. Embed video of project demo
