@@ -27,7 +27,17 @@ Team id here
 - sqlparse==0.4.1
 ## How to configure
 #### 1. Clone to https://github.com/imrijutr/Event-Mentee.git
-`$git clone https://github.com/imrijutr/Event-Mentee.git`
+`git clone https://github.com/imrijutr/Event-Mentee.git`
+#### 2. Create Virtual Environment 
+`python3 -m venv /path/to/new/virtual/environment`
+#### 3. Activate the Virtual Environment
+` source <path to venv>/bin/activate`
+#### 3. Install all the dependencies
+`pip install requirements.txt`
+#### 5. Run the server 
+`python manage.py runserver'
+
+
 
 ## How to Run
 Instructions for running
