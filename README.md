@@ -2,10 +2,16 @@
 # Event Mentee
 The Event Mentee is an event management platform for creating the events for organizers and registering the events for who wish to participate in it.
 Event Mentee has features like 
+- Create events
+- Update created event's
+- User profile
 - Upcoming events
+- Registered upcoming events
+- History of all events registered, attended, created.
+- Limit max registration for an event.
 - RSVP in built
+- And many more...
 
-We are adding more to it!
 ## Team members
 1. [Ajin K J](https://github.com/Ajinkj)
 2. [Leen David P B](https://github.com/LeenDavidPB)
@@ -15,7 +21,7 @@ BFH/recmliFUaORA6shU5/2021
 [Video Explanation in malayalam](https://www.loom.com/share/0b74dd06ea1648cbb776a0dc776cf8fe)
 ## How it Works ?
 
-Its working on Python-Django.
+We used Django to build our webapp. We created the models to save datas of user, events, registered events, etc. Then we setup the url's and views associated with it. Once the user click on our webapp link they are takin to the Home, there they can find option to create event, profile, signup, login, upcoming events, etc. Anew user can signup and existing user can login. Then they can create event, register for the available events, update there profile picture and many more. A ton of faetures is added to our webapp.
 
 2.[https://www.loom.com/share/0b74dd06ea1648cbb776a0dc776cf8fe]
 ## Libraries used
